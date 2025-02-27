@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            // Taking inputs
+            int age = scanner.nextInt();
+            String citizenship = scanner.next();
+
+            // Determine eligibility to vote
+            String eligibility = (age >= 18 && citizenship.equals("Indian")) ? "Citizen is eligible to vote." : "Citizen is not eligible to vote.";
+
+            // Print the result using ternary operator
+            System.out.println(eligibility);
+        } catch (Exception e) {
+            System.out.println("Invalid input format. Please enter age as integer and citizenship as string (Indian or non-Indian).");
+        } finally {
+            scanner.close();
+        }
+    }
+}
